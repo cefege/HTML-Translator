@@ -2,12 +2,14 @@ from bs4 import BeautifulSoup
 from deep_translator import GoogleTranslator
 
 
-def html_translate(html_text: str, source_language: str = 'en', target_language: str = 'es') -> str:
+def html_translate(html_text: str, source_language: str = 'en', target_language: str = 'es',
+                   debug: bool = False) -> str:
     """
     Function That Takes Input HTML and The Source and Target Language, Then Return The Translated HTML
     :param html_text: The raw HTML
     :param source_language: The translation source language
     :param target_language: The translation target language
+    :param debug: set to true to know more about issues and corner cases
     :return: The Translated HTML
     """
     # Initiate The Translator (I Prefer Google Translator But You Can Choose Any Other Translator From This List)
@@ -42,6 +44,9 @@ def html_translate(html_text: str, source_language: str = 'en', target_language:
 
     # Finally, We will Convert The Translated Paragraph again into List
     trans_paragraph_list = translation.split(placeholder_translated)
+
+    if debug and (len(trans_paragraph_list) != len(translation_list)):
+        print(f"Original Content:\n{html_parser}\n=============\nTranslated Content:\n{trans_paragraph_list}")
 
     # Loop On The HTML Again
     for idx, st in enumerate(html_parser.strings):
