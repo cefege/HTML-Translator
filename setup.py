@@ -4,7 +4,7 @@ with open("readme.md", "r", encoding="utf-8") as fh:
     long_description = fh.read()
 
 setuptools.setup(
-    name='HTML-Translator',
+    name='html-translator',
     version='0.0.1',
     author='Mihai Mateias',
     author_email='mateiasmihaiandrei@gmail.com',
