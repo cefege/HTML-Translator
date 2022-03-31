@@ -1,5 +1,14 @@
 # HTML Translator
 
+## Installation
+### Using pip
+```angular2html
+pip install git+https://github.com/cefege/HTML-Translator.git 
+```
+or clone the repository
+```angular2html
+git clone https://github.com/cefege/HTML-Translator.git
+```
 ## Usage
 1. Import `translation_module.py` 
 ```
